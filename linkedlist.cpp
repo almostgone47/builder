@@ -4,9 +4,20 @@
 
 #include "linkedlist.h"
 
+//Name:   LinkedList()
+//Desc:   Constructor for LinkedList class.
+//input:  none.
+//output: none
+//return: none
 LinkedList::LinkedList() {
 }
 
+//Name:   ~LinkedList()
+//Desc:   Destructor for LinkedList class. The delete keyword deallocates memory and the pointers are
+//        set to null so as not to leave dangling pointers.
+//input:  none.
+//output: none
+//return: none
 LinkedList::~LinkedList() {
     while (head != nullptr) {
         Node* temp = head;
@@ -17,6 +28,11 @@ LinkedList::~LinkedList() {
     tail = nullptr;
 }
 
+//Name:   LinkedList()
+//Desc:   Copy constructor for LinkedList class.
+//input:  none.
+//output: none
+//return: none
 LinkedList::LinkedList(const LinkedList &list) {
     head = list.head;
     tail = list.tail;
@@ -38,6 +54,11 @@ const LinkedList & LinkedList::operator= (const LinkedList &list) {
     }
 }
 
+//Name:   addFront()
+//Desc:   Adds a node to the front of the linked list.
+//input:  none
+//output: none
+//return: none
 void LinkedList::addFront(Request request) {
     Node *newNode = new Node();
     newNode->data = request;
@@ -46,6 +67,11 @@ void LinkedList::addFront(Request request) {
     count++;
 }
 
+//Name:   addBack()
+//Desc:   Adds node to the end of the linked list.
+//input:  none
+//output: none
+//return: none
 void LinkedList::addBack(Request request) {
     Node *curr = head;
     Node *newNode = new Node();
@@ -68,6 +94,11 @@ void LinkedList::addBack(Request request) {
     count++;
 }
 
+//Name:   removeFront()
+//Desc:   Removes the first node.
+//input:  none
+//output: none
+//return: none
 void LinkedList::removeFront(Request& request) {
     Node *temp = head;
     request = temp->data;
@@ -78,6 +109,11 @@ void LinkedList::removeFront(Request& request) {
     count--;
 }
 
+//Name:   removeBack()
+//Desc:   Removes the last node.
+//input:  none
+//output: none
+//return: none
 void LinkedList::removeBack(Request& request) {
     Node *curr = head, *prev = nullptr;
 
@@ -104,6 +140,11 @@ void LinkedList::removeBack(Request& request) {
     count--;
 }
 
+//Name:   isEmpty()
+//Desc:   Checks to see if there are any nodes in the linked list.
+//input:  none
+//output: none
+//return: none
 bool LinkedList::isEmpty() {
     return count == 0;
 }

@@ -4,14 +4,29 @@
 
 #include "builder.h"
 
+//Name:   removeBack()
+//Desc:   Removes the last node.
+//input:  none
+//output: none
+//return: none
 void Builder::setBuilderNum(int num) {
     builderNum = num;
 }
 
+//Name:   removeBack()
+//Desc:   Removes the last node.
+//input:  none
+//output: none
+//return: none
 void Builder::setCurrentSector(int num) {
     currentSector = num;
 }
 
+//Name:   removeBack()
+//Desc:   Removes the last node.
+//input:  none
+//output: none
+//return: none
 void Builder::addRequest(int num, structure_type type) {
     Request request(num, type);
     list.addBack(request);
@@ -19,6 +34,11 @@ void Builder::addRequest(int num, structure_type type) {
     request.print();
 }
 
+//Name:   removeBack()
+//Desc:   Removes the last node.
+//input:  none
+//output: none
+//return: none
 bool Builder::doCycle() {
     if (list.isEmpty()) {
         return false;
@@ -41,6 +61,11 @@ bool Builder::doCycle() {
     return true;
 }
 
+//Name:   removeBack()
+//Desc:   Removes the last node.
+//input:  none
+//output: none
+//return: none
 void Builder::returnHome() {
     while (!stack.isEmpty()) {
         Request request = stack.pop();

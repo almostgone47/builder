@@ -1,6 +1,11 @@
 #include <cstring>
 #include "structuretype.h"
 
+//Name:   getFromString()
+//Desc:
+//input:  none
+//output: none
+//return: none
 structure_type getFromString(const char* str)
 {
     structure_type ret = WATER;
@@ -22,6 +27,11 @@ structure_type getFromString(const char* str)
     return ret;
 }
 
+//Name:   toString()
+//Desc:
+//input:  none
+//output: none
+//return: none
 void toString(const structure_type type,char* str)
 {
     switch (type)
@@ -40,6 +50,11 @@ void toString(const structure_type type,char* str)
     }
 }
 
+//Name:   str()
+//Desc:
+//input:  none
+//output: none
+//return: none
 const char* str(const structure_type type)
 {
     const char* ptr;
