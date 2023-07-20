@@ -17,12 +17,8 @@ Request * Stack::push(Request request) {
     list.addBack(request);
 }
 
-Request* Stack::pop() {
-    Request* request = new Request;
-    list.removeBack(*request);
+Request Stack::pop() {
+    Request request;
+    list.removeBack(request);
     return request;
-}
-
-void Stack::print() {
-
 }

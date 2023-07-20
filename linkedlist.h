@@ -29,6 +29,8 @@ public:
     void removeFront(Request& request);
     void removeBack(Request& request);
     bool isEmpty();
+
+    Request *pop();
 };
 
 #endif //BUILDERS_LINKEDLIST_H

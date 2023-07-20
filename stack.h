@@ -14,7 +14,7 @@ public:
     Stack();
     bool isEmpty();
     Request * push(Request request);
-    Request * pop();
+    Request pop();
     void print();
 };
 

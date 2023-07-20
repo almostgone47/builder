@@ -13,10 +13,10 @@ void Builder::setCurrentSector(int num) {
 }
 
 void Builder::addRequest(int num, structure_type type) {
-    Request* request = new Request(num, type);
-    list.addBack(*request);
+    Request request(num, type);
+    list.addBack(request);
     cout << "Builder #" << builderNum << ": Received a request to build a ";
-    request->print();
+    request.print();
 }
 
 bool Builder::doCycle() {
@@ -43,8 +43,8 @@ bool Builder::doCycle() {
 
 void Builder::returnHome() {
     while (!stack.isEmpty()) {
-        Request *request = stack.pop();
-        int nextSector = request->getSector();
+        Request request = stack.pop();
+        int nextSector = request.getSector();
 
         if (nextSector != currentSector) {
             cout << "Builder #" << builderNum << ": Moving to sector " << nextSector << endl;
@@ -52,7 +52,7 @@ void Builder::returnHome() {
         }
 
         cout << "Builder #" << builderNum << ": Connected to ";
-        request->print();
+        request.print();
     }
 
     cout  << "Builder #" << builderNum <<": Arrived back at base.";
