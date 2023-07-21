@@ -38,3 +38,10 @@
 7	922	1689822771672261220	CMakeFiles/builders.dir/builders.cpp.o	b66e37d6365efb7
 11	1275	1689822799827094534	CMakeFiles/builders.dir/builder.cpp.o	b23e6097d883b0f2
 1276	1388	1689822799943808678	builders	2cbe6cde06616005
+9	2799	1689907508237098195	CMakeFiles/builders.dir/structuretype.cpp.o	46a6c0d11d8a5d2f
+9	3373	1689907508808099780	CMakeFiles/builders.dir/stack.cpp.o	d984c26f000db2d7
+8	3384	1689907508818099805	CMakeFiles/builders.dir/linkedlist.cpp.o	1852cab71433a1a
+9	3403	1689907508837850912	CMakeFiles/builders.dir/request.cpp.o	5e4c94af609f7e95
+8	3407	1689907508841473274	CMakeFiles/builders.dir/builder.cpp.o	b23e6097d883b0f2
+7	3537	1689907508973415554	CMakeFiles/builders.dir/builders.cpp.o	b66e37d6365efb7
+3537	3886	1689907509327226231	builders	2cbe6cde06616005

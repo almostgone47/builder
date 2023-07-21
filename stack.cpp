@@ -28,7 +28,7 @@ bool Stack::isEmpty() const {
 //input:  A request object.
 //output: none
 //return: A pointer to the request passed in.
-Request * Stack::push(Request request) {
+void Stack::push(Request request) {
     list.addBack(request);
 }
 

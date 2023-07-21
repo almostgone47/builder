@@ -13,9 +13,8 @@ private:
 public:
     Stack();
     bool isEmpty() const;
-    Request * push(Request request);
+    void push(Request request);
     Request pop();
-    void print();
 };
 
 #endif //BUILDERS_STACK_H
