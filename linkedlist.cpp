@@ -4,7 +4,7 @@
 
 #include "linkedlist.h"
 
-//Name:   LinkedList()
+//Name:   LinkedList
 //Desc:   Constructor for LinkedList class.
 //input:  none.
 //output: none
@@ -12,7 +12,7 @@
 LinkedList::LinkedList() {
 }
 
-//Name:   ~LinkedList()
+//Name:   ~LinkedList
 //Desc:   Destructor for LinkedList class. The delete keyword deallocates memory and the pointers are
 //        set to null so as not to leave dangling pointers.
 //input:  none.
@@ -28,9 +28,9 @@ LinkedList::~LinkedList() {
     tail = nullptr;
 }
 
-//Name:   LinkedList()
+//Name:   LinkedList
 //Desc:   Copy constructor for LinkedList class.
-//input:  none.
+//input:  none
 //output: none
 //return: none
 LinkedList::LinkedList(const LinkedList &list) {
@@ -41,6 +41,11 @@ LinkedList::LinkedList(const LinkedList &list) {
     *this = list;
 }
 
+//Name:   operator=
+//Desc:   Redefines = to perform deep copy.
+//input:  Reference to the linked list to copy from.
+//output: none
+//return: A reference to the linked list that used the method to copy.
 const LinkedList & LinkedList::operator= (const LinkedList &list) {
     if (this == &list) {
         return *this;
@@ -54,7 +59,7 @@ const LinkedList & LinkedList::operator= (const LinkedList &list) {
     }
 }
 
-//Name:   addFront()
+//Name:   addFront
 //Desc:   Adds a node to the front of the linked list.
 //input:  none
 //output: none
@@ -67,7 +72,7 @@ void LinkedList::addFront(Request request) {
     count++;
 }
 
-//Name:   addBack()
+//Name:   addBack
 //Desc:   Adds node to the end of the linked list.
 //input:  none
 //output: none
@@ -94,7 +99,7 @@ void LinkedList::addBack(Request request) {
     count++;
 }
 
-//Name:   removeFront()
+//Name:   removeFront
 //Desc:   Removes the first node.
 //input:  none
 //output: none
@@ -109,7 +114,7 @@ void LinkedList::removeFront(Request& request) {
     count--;
 }
 
-//Name:   removeBack()
+//Name:   removeBack
 //Desc:   Removes the last node.
 //input:  none
 //output: none
@@ -140,11 +145,11 @@ void LinkedList::removeBack(Request& request) {
     count--;
 }
 
-//Name:   isEmpty()
+//Name:   isEmpty
 //Desc:   Checks to see if there are any nodes in the linked list.
 //input:  none
 //output: none
 //return: none
-bool LinkedList::isEmpty() {
+bool LinkedList::isEmpty() const {
     return count == 0;
 }

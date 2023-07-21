@@ -5,7 +5,7 @@
 #include "stack.h"
 #include "request.h"
 
-//Name:   Stack()
+//Name:   Stack
 //Desc:   Default Stack constructor.
 //input:  none
 //output: none
@@ -13,30 +13,30 @@
 Stack::Stack() {
 }
 
-//Name:   isEmpty()
-//Desc:
+//Name:   isEmpty
+//Desc:   Checks to see if stack has an items in it.
 //input:  none
 //output: none
-//return: none
-bool Stack::isEmpty() {
+//return: True or false if empty or not.
+bool Stack::isEmpty() const {
     bool result = list.isEmpty();
     return result;
 }
 
-//Name:   push()
-//Desc:
-//input:  none
+//Name:   push
+//Desc:   Pushes a request onto top of the stack.
+//input:  A request object.
 //output: none
-//return: none
+//return: A pointer to the request passed in.
 Request * Stack::push(Request request) {
     list.addBack(request);
 }
 
-//Name:   pop()
-//Desc:
+//Name:   pop
+//Desc:   Removes a request from the top of the stack.
 //input:  none
 //output: none
-//return: none
+//return: A reference to the request removed from the top of the stack.
 Request Stack::pop() {
     Request request;
     list.removeBack(request);

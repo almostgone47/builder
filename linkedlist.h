@@ -28,7 +28,7 @@ public:
     void addBack(Request request);
     void removeFront(Request& request);
     void removeBack(Request& request);
-    bool isEmpty();
+    bool isEmpty() const;
 
     Request *pop();
 };

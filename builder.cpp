@@ -4,28 +4,28 @@
 
 #include "builder.h"
 
-//Name:   removeBack()
-//Desc:   Removes the last node.
-//input:  none
+//Name:   setBuilderNum
+//Desc:   Setter for the builder instance's builder number.
+//input:  An integer representing the builder's number.
 //output: none
 //return: none
 void Builder::setBuilderNum(int num) {
     builderNum = num;
 }
 
-//Name:   removeBack()
-//Desc:   Removes the last node.
-//input:  none
+//Name:   setCurrentSector
+//Desc:   Setter for the builder instance's current sector.
+//input:  An integer representing the current sector number.
 //output: none
 //return: none
 void Builder::setCurrentSector(int num) {
     currentSector = num;
 }
 
-//Name:   removeBack()
-//Desc:   Removes the last node.
-//input:  none
-//output: none
+//Name:   addRequest
+//Desc:   Adds a request to the builder instance's list.
+//input:  An integer representing the sector and an enum for the structure_type to be built.
+//output: Prints that the builder instance's builder number has received a request.
 //return: none
 void Builder::addRequest(int num, structure_type type) {
     Request request(num, type);
@@ -34,11 +34,11 @@ void Builder::addRequest(int num, structure_type type) {
     request.print();
 }
 
-//Name:   removeBack()
-//Desc:   Removes the last node.
+//Name:   doCycle
+//Desc:   Executes one request from a Builder instance's list if list isn't empty.
 //input:  none
-//output: none
-//return: none
+//output: Prints which sector the builder instance is moving to and the action at that sector.
+//return: True or false if the list is empty or not.
 bool Builder::doCycle() {
     if (list.isEmpty()) {
         return false;
@@ -61,12 +61,13 @@ bool Builder::doCycle() {
     return true;
 }
 
-//Name:   removeBack()
-//Desc:   Removes the last node.
+//Name:   returnHome
+//Desc:   Loops through stack until the Builder instance has backtracked through all the requests
+//        in its stack until it has returned home.
 //input:  none
-//output: none
+//output: Where the builder is moving to, then connected to and finally that its returned home.
 //return: none
-void Builder::returnHome() {
+void Builder::returnHome() const {
     while (!stack.isEmpty()) {
         Request request = stack.pop();
         int nextSector = request.getSector();

@@ -12,7 +12,7 @@ private:
     LinkedList list;
 public:
     Stack();
-    bool isEmpty();
+    bool isEmpty() const;
     Request * push(Request request);
     Request pop();
     void print();

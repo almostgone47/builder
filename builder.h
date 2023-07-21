@@ -22,7 +22,7 @@ class Builder {
         void setCurrentSector(int);
         void addRequest(int, structure_type);
         bool doCycle();
-        void returnHome();
+        void returnHome() const;
 };
 
 #endif //BUILDERS_BUILDER_H
