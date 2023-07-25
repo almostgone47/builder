@@ -29,7 +29,7 @@ bool Stack::isEmpty() const {
 //output: none
 //return: A pointer to the request passed in.
 void Stack::push(Request request) {
-    list.addBack(request);
+    list.addFront(request);
 }
 
 //Name:   pop
@@ -39,6 +39,6 @@ void Stack::push(Request request) {
 //return: A reference to the request removed from the top of the stack.
 Request Stack::pop() {
     Request request;
-    list.removeBack(request);
+    list.removeFront(request);
     return request;
 }
