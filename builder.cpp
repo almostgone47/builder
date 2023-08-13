@@ -28,10 +28,10 @@ void Builder::setCurrentSector(int num) {
 //output: Prints that the builder instance's builder number has received a request.
 //return: none
 void Builder::addRequest(int num, structure_type type) {
-    Request request(num, type);
+    Request *request = new Request(num, type);
     list.addBack(request);
     cout << "Builder #" << builderNum << ": Received request to build a ";
-    request.print();
+    request->print();
 }
 
 //Name:   doCycle
@@ -40,12 +40,12 @@ void Builder::addRequest(int num, structure_type type) {
 //output: Prints which sector the builder instance is moving to and the action at that sector.
 //return: True or false if the list is empty or not.
 bool Builder::doCycle() {
-    if (list.isEmpty()) {
-        return false;
-    } else {
-        Request request;
-        list.removeFront(request);
-        int nextSector = request.getSector();
+    bool didSomething = false;
+
+    if (!list.isEmpty()) {
+        Request *request = list.removeFront();
+
+        int nextSector = request->getSector();
 
         if (currentSector != nextSector) {
             cout << "Builder #" << builderNum << ": Moving to sector " << nextSector << endl;
@@ -53,12 +53,14 @@ bool Builder::doCycle() {
         }
 
         cout << "Builder #" << builderNum << ": Building a ";
-        request.print();
+        request->print();
 
         stack.push(request);
+
+        didSomething = true;
     }
 
-    return true;
+    return didSomething;
 }
 
 //Name:   returnHome
@@ -69,8 +71,8 @@ bool Builder::doCycle() {
 //return: none
 void Builder::returnHome() {
     while (!stack.isEmpty()) {
-        Request request = stack.pop();
-        int nextSector = request.getSector();
+        Request *request = stack.pop();
+        int nextSector = request->getSector();
 
         if (nextSector != currentSector) {
             cout << "Builder #" << builderNum << ": Moving to sector " << nextSector << endl;
@@ -78,7 +80,9 @@ void Builder::returnHome() {
         }
 
         cout << "Builder #" << builderNum << ": Connected to ";
-        request.print();
+        request->print();
+
+        delete request;
     }
 
     cout  << "Builder #" << builderNum <<": Arrived back at base." << endl;

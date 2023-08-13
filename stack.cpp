@@ -28,7 +28,7 @@ bool Stack::isEmpty() const {
 //input:  A request object.
 //output: none
 //return: A pointer to the request passed in.
-void Stack::push(Request request) {
+void Stack::push(Request *request) {
     list.addFront(request);
 }
 
@@ -37,8 +37,6 @@ void Stack::push(Request request) {
 //input:  none
 //output: none
 //return: A reference to the request removed from the top of the stack.
-Request Stack::pop() {
-    Request request;
-    list.removeFront(request);
-    return request;
+Request * Stack::pop() {
+    return list.removeFront();
 }

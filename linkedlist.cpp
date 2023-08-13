@@ -6,7 +6,7 @@
 
 //Name:   LinkedList
 //Desc:   Constructor for LinkedList class.
-//input:  none.
+//input:  none
 //output: none
 //return: none
 LinkedList::LinkedList() {
@@ -34,11 +34,15 @@ LinkedList::~LinkedList() {
 //output: none
 //return: none
 LinkedList::LinkedList(const LinkedList &list) {
-    head = list.head;
-    tail = list.tail;
-    count = list.count;
+    head = nullptr;
+    tail = nullptr;
+    count = 0;
 
-    *this = list;
+    Node *curr = list.head;
+    while (curr != nullptr) {
+        addBack(new Request(*curr->data));
+        curr = curr->next;
+    }
 }
 
 //Name:   operator=
@@ -47,16 +51,23 @@ LinkedList::LinkedList(const LinkedList &list) {
 //output: none
 //return: A reference to the linked list that used the method to copy.
 const LinkedList & LinkedList::operator= (const LinkedList &list) {
-    if (this == &list) {
-        return *this;
-    }
-    else {
-        this->head= list.head;
-        this->tail = list.tail;
-        this->count = list.count;
+    if (this != &list) {
+        while (head != nullptr) {
+            Node *temp = head;
+            head = head->next;
+            delete temp;
+        }
+        tail = nullptr;
+        count = 0;
 
-        return *this;
+        Node *curr = list.head;
+        while (curr != nullptr) {
+            addBack(new Request(*curr->data));
+            curr = curr->next;
+        }
     }
+
+    return *this;
 }
 
 //Name:   addFront
@@ -64,9 +75,8 @@ const LinkedList & LinkedList::operator= (const LinkedList &list) {
 //input:  none
 //output: none
 //return: none
-void LinkedList::addFront(Request request) {
-    Node *newNode = new Node();
-    newNode->data = request;
+void LinkedList::addFront(Request *request) {
+    Node *newNode = new Node(request);
     newNode->next = head;
     head = newNode;
     count++;
@@ -77,10 +87,9 @@ void LinkedList::addFront(Request request) {
 //input:  none
 //output: none
 //return: none
-void LinkedList::addBack(Request request) {
+void LinkedList::addBack(Request *request) {
     Node *curr = head;
-    Node *newNode = new Node();
-    newNode->data = request;
+    Node *newNode = new Node(request);
 
     if (head == nullptr) {
         head = newNode;
@@ -104,14 +113,16 @@ void LinkedList::addBack(Request request) {
 //input:  none
 //output: none
 //return: none
-void LinkedList::removeFront(Request& request) {
+Request * LinkedList::removeFront() {
     Node *temp = head;
-    request = temp->data;
+    Request *request = head->data;
 
     head = head->next;
     delete temp;
     temp = nullptr;
     count--;
+
+    return request;
 }
 
 //Name:   removeBack
@@ -119,7 +130,7 @@ void LinkedList::removeFront(Request& request) {
 //input:  none
 //output: none
 //return: none
-void LinkedList::removeBack(Request& request) {
+void LinkedList::removeBack() {
     Node *curr = head, *prev = nullptr;
 
     if (head == nullptr) {
@@ -137,8 +148,6 @@ void LinkedList::removeBack(Request& request) {
         prev->next = nullptr;
         tail = prev;
     }
-
-    request = curr->data;
 
     delete curr;
     curr = nullptr;

@@ -15,7 +15,6 @@ private:
     int sector;
     structure_type type;
 public:
-    Request();
     Request(int,structure_type);
     int getSector() const;
     char * getType() const;

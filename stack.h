@@ -14,8 +14,8 @@ public:
     Stack();
     bool isEmpty() const;
     // maybe should push and pop from the front for better speed
-    void push(Request request);
-    Request pop();
+    void push(Request *request);
+    Request * pop();
 };
 
 #endif //BUILDERS_STACK_H

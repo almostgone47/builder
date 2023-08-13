@@ -5,16 +5,6 @@
 #include "request.h"
 
 //Name:   Request
-//Desc:   Default Request constructor.
-//input:  none
-//output: none
-//return: none
-Request::Request() {
-    this->sector = 0;
-    this->type = UNK;
-}
-
-//Name:   Request
 //Desc:   Request constructor.
 //input:  An integer for the sector number and an enum structure_type to be built.
 //output: none
