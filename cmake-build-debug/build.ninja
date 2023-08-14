@@ -49,8 +49,8 @@ cmake_ninja_workdir = /Users/jeremiah/CLionProjects/builders/cmake-build-debug/
 
 build cmake_object_order_depends_target_builders: phony || CMakeFiles/builders.dir
 
-build CMakeFiles/builders.dir/builders.cpp.o: CXX_COMPILER__builders_Debug /Users/jeremiah/CLionProjects/builders/builders.cpp || cmake_object_order_depends_target_builders
-  DEP_FILE = CMakeFiles/builders.dir/builders.cpp.o.d
+build CMakeFiles/builders.dir/extra_builders.cpp.o: CXX_COMPILER__builders_Debug /Users/jeremiah/CLionProjects/builders/extra_builders.cpp || cmake_object_order_depends_target_builders
+  DEP_FILE = CMakeFiles/builders.dir/extra_builders.cpp.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
   OBJECT_DIR = CMakeFiles/builders.dir
   OBJECT_FILE_DIR = CMakeFiles/builders.dir
@@ -85,6 +85,12 @@ build CMakeFiles/builders.dir/structuretype.cpp.o: CXX_COMPILER__builders_Debug 
   OBJECT_DIR = CMakeFiles/builders.dir
   OBJECT_FILE_DIR = CMakeFiles/builders.dir
 
+build CMakeFiles/builders.dir/buildermgr.cpp.o: CXX_COMPILER__builders_Debug /Users/jeremiah/CLionProjects/builders/buildermgr.cpp || cmake_object_order_depends_target_builders
+  DEP_FILE = CMakeFiles/builders.dir/buildermgr.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu++17
+  OBJECT_DIR = CMakeFiles/builders.dir
+  OBJECT_FILE_DIR = CMakeFiles/builders.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target builders
@@ -93,7 +99,7 @@ build CMakeFiles/builders.dir/structuretype.cpp.o: CXX_COMPILER__builders_Debug 
 #############################################
 # Link the executable builders
 
-build builders: CXX_EXECUTABLE_LINKER__builders_Debug CMakeFiles/builders.dir/builders.cpp.o CMakeFiles/builders.dir/builder.cpp.o CMakeFiles/builders.dir/linkedlist.cpp.o CMakeFiles/builders.dir/request.cpp.o CMakeFiles/builders.dir/stack.cpp.o CMakeFiles/builders.dir/structuretype.cpp.o
+build builders: CXX_EXECUTABLE_LINKER__builders_Debug CMakeFiles/builders.dir/extra_builders.cpp.o CMakeFiles/builders.dir/builder.cpp.o CMakeFiles/builders.dir/linkedlist.cpp.o CMakeFiles/builders.dir/request.cpp.o CMakeFiles/builders.dir/stack.cpp.o CMakeFiles/builders.dir/structuretype.cpp.o CMakeFiles/builders.dir/buildermgr.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk
   OBJECT_DIR = CMakeFiles/builders.dir
   POST_BUILD = :

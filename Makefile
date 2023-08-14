@@ -1,11 +1,13 @@
 CC = g++
 CPPFLAGS = -std=c++17 -Wall -g
 
-builders: builders.o builder.o linkedlist.o request.o stack.o structuretype.o
+builders: builders.o builder.o buildermgr.o linkedlist.o request.o stack.o structuretype.o
 
-builders.o: builders.cpp
+builders.o: extra_builders.cpp
 
 builder.o: builder.cpp builder.h
+
+buildermgr.o: buildermgr.cpp buildermgr.h
 
 linkedlist.o: linkedlist.cpp linkedlist.h
 
